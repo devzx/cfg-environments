@@ -1,25 +1,22 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  annotations:
-    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
   name: bootstrap
-  namespace: argocd
 spec:
-  destination:
-    namespace: argocd
-    server: https://kubernetes.default.svc
   project: default
   source:
+    repoURL: 'https://github.com/devzx/cfg-environments.git'
+    path: dev-lon-main-10c4c9d0
+    targetRevision: HEAD
     directory:
       recurse: true
-    path: dev-lon-main-10c4c9d0
-    repoURL: https://github.com/devzx/cfg-environments.git
-    targetRevision: HEAD
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: argocd
   syncPolicy:
     automated:
+      prune: true
       selfHeal: true
     syncOptions:
-      - CreateNamespace=true
-      - Prune=true
-      - ServerSideApply=true
+    - CreateNamespace=true
+    - ServerSideApply=true
