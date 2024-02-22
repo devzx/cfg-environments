@@ -9,7 +9,7 @@ spec:
   destination:
     namespace: cert-manager
     server: https://kubernetes.default.svc
-  project: system
+  project: default
   source:
     chart: cert-manager
     repoURL: https://charts.jetstack.io
