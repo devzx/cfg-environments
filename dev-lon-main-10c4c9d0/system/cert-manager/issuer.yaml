@@ -4,5 +4,7 @@ metadata:
   name: selfsigned
   # annotations:
   #   argocd.argoproj.io/sync-wave: "5"
+  annotations:
+    argocd.argoproj.io/hook: PostSync
 spec:
   selfSigned: {}
