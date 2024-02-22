@@ -14,7 +14,7 @@ spec:
     directory:
       recurse: true
     path: dev-lon-main-10c4c9d0
-    repoURL: git@github.com:devzx/cfg-environments.git
+    repoURL: https://github.com/devzx/cfg-environments.git
     targetRevision: HEAD
   syncPolicy:
     automated:
